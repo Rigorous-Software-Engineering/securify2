@@ -20,6 +20,9 @@ context = AnalysisContext(
     )
 # print(cfg)
 
+ast = context.ast
+print(ast)
+
 facts, _ = encode(context.cfg)
 print(context.cfg)
 print(facts)
