@@ -297,7 +297,10 @@ class ProductionOps:
     def children(self):
         children_info = self.production_info().children
         for name in children_info:
-            child = getattr(self, name)
+            try:
+                child = getattr(self, name)
+            except AttributeError:
+                child = None
 
             if child is None:
                 continue
