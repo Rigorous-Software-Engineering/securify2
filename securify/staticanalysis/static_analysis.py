@@ -57,7 +57,8 @@ def discover_patterns(**kw_args_souffle):
     # When patterns are just discovered always use interpreter
     kw_args_souffle.update(
         jobs="auto",
-        use_interpreter=True
+        use_interpreter=True,
+        verbose=True
     )
 
     souffle_output, facts_out = souffle.run_souffle(

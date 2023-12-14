@@ -35,7 +35,8 @@ def souffle_wrapper(souffle_binary=None,
                     use_interpreter=None,
                     force_recompilation=None,
                     success_return_code=0,
-                    macro_definitions=None):
+                    macro_definitions=None,
+                    legacy=True):
     def get_path(d):
         return str(d) if isinstance(d, Path) else d
 
@@ -72,6 +73,9 @@ def souffle_wrapper(souffle_binary=None,
     add_param(profile_out, '--profile')
     add_param(profile_use, '--profile-use')
     add_param(report_out, '--debug-report')
+
+    if legacy:
+        add_param('', '--legacy', no_args=True)
 
     # Try to compile dl only if there is no use_interpreter directive
     # Turn it off for now

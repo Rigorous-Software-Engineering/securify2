@@ -1,0 +1,3 @@
+*.pyc
+/securify.egg-info/**/*
+x86_64-ubuntu-2004-souffle-2.4.1-Linux.deb
